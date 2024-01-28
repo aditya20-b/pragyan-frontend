@@ -60,8 +60,8 @@ export default function InitiativeDropdown({ dispCity }: { dispCity: string }) {
 				<TableHeader>
 					<TableRow>
 						<TableHead></TableHead>
-						{Object.keys(tableData[0]).map((data) => {
-							return <TableHead>{data}</TableHead>;
+						{Object.keys(tableData[0]).map((data, index) => {
+                        return <TableHead key={index}>{data}</TableHead>;
 						})}
 					</TableRow>
 				</TableHeader>
