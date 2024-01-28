@@ -62,7 +62,6 @@ export default function Home() {
       </div>
       <div className="grid grid-cols-12 gap-x-4">
         <LineChart data={chartDataPoints} />
-        <p>lorem ipsum</p>
         <Piechart chemicalData={defaultCity.chemicalData} />
       </div>
       <iframe

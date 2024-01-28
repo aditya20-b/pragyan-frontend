@@ -33,7 +33,7 @@ export default function Piechart({
   });
   useEffect(() => {
     const fetchData = () => {
-      fetch("http://10.5.229.12/users")
+      fetch("https://jsonplaceholder.typicode.com/users")
         .then((data) => {
           const res = data.json();
           return res;
