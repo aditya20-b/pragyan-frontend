@@ -52,6 +52,7 @@ export const LineChart = ({ data }: { data: any }) => {
   return (
     <div className="col-span-8 bg-white">
       <Line
+      // @ts-ignore
         options={options}
         data={chartData}
         style={{
