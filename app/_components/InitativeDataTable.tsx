@@ -30,7 +30,7 @@ export default function InitiativeDropdown({ dispCity }: { dispCity: string }) {
 	const handlePostRequest = async (selectedRows: any) => {
 		console.log(selectedRows);
 		try {
-			const response = await fetch('http://10.5.229.12:8000/calc/fund_recalc', {
+			const response = await fetch('http://100.93.36.23:8000/calc/fund_recalc', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ export default function InitiativeDropdown({ dispCity }: { dispCity: string }) {
 
 
 	return (
-		<>
+		<div>
 			<Table className="text-xs w-full col-span-1 overflow-x-scroll">
 				<TableCaption>A list of initiatives taken by the Government.</TableCaption>
 				<TableHeader>
@@ -83,9 +83,10 @@ export default function InitiativeDropdown({ dispCity }: { dispCity: string }) {
 							);
 						})}
 				</TableBody>
-				{showButton &&
-					<Button className="text-xs w-full col-span-1" onClick={() => handlePostRequest(selectedRows)}>Submit</Button>}</Table>
-		</>
+			</Table>
+			{showButton &&
+					<Button className="text-xs w-full col-span-1 ml-auto" onClick={() => handlePostRequest(selectedRows)}>Submit</Button>}
+		</div>
 	);
 }
 
@@ -104,6 +105,7 @@ function DataRow({
 		Funding: number;
 	}[]
 	| undefined;
+	isCheckBoxDisabled: boolean
 }) {
 	const [checkState, setCheckState] = useState(false);
 	return (
